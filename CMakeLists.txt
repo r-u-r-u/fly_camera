@@ -14,10 +14,12 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   std_msgs
+  camera_info_manager
 )
 
 ## System dependencies are found with CMake's conventions
 find_package(OpenCV REQUIRED)
+find_package(PCL REQUIRED)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -143,7 +145,6 @@ add_executable(
   src/fly_camera.cpp
   src/FlyCap2CV.cpp
 )
-
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -160,7 +161,6 @@ target_link_libraries(${PROJECT_NAME}
   ${OpenCV_LIBRARIES}
   flycapture
 )
-
 #############
 ## Install ##
 #############
