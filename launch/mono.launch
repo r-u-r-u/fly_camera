@@ -1,0 +1,5 @@
+<launch>
+  <node name="fly_camera" type="fly_camera" pkg="fly_camera">
+    <param name="cam_num" value="0"/>
+  </node>
+</launch>

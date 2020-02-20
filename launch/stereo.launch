@@ -1,0 +1,27 @@
+<launch>
+  
+  <group ns="stereo">
+
+    <node name="left" type="fly_camera" pkg="fly_camera" output="screen">
+      <param name="number" value="0"/>
+      <param name="side" value="left"/>
+    </node>
+    
+    <node name="proc_left" pkg="image_proc" type="image_proc" ns="left" output="screen">
+    </node>
+  
+  </group>
+
+  <group ns="stereo">
+  
+    <node name="right" type="fly_camera" pkg="fly_camera" output="screen">
+      <param name="number" value="1"/>
+      <param name="side" value="right"/>
+    </node>
+  
+    <node name="proc_right" pkg="image_proc" type="image_proc" ns="right" output="screen" >
+    </node>
+
+  </group>
+
+</launch>
